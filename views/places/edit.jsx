@@ -1,7 +1,7 @@
 const React = require('react')
 const Def = require('../default')
 
-function show (html) {
+function edit (html) {
     return (
         <html>
             <head>
@@ -16,4 +16,4 @@ function show (html) {
   
 
 
-module.exports = show
+module.exports = edit
