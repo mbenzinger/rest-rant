@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   //all pages go above the 404
 
 app.get('*', (req, res) => {
-  res.render('errors404')
+  res.render('error404')
 })
 
 app.listen(process.env.PORT)
