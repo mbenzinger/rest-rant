@@ -8,8 +8,11 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-  res.send('Hello world home page')
+  res.render('home')
 })
+
+ 
+  //all pages go above the 404
 
 app.get('*', (req, res) => {
   res.render('errors404')
