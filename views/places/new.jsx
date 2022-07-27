@@ -1,19 +1,14 @@
 const React = require('react')
 const Def = require('../default')
 
-function mew (html) {
+function new_form () {
     return (
-        <html>
-            <head>
-                <title>Title</title>
-            </head>
-            <body>
-                {html.children}
-            </body>
-        </html>
+        <Def>
+          <main>
+            <h1>Add a New Place</h1>
+          </main>
+        </Def>
     )
-  }
-  
+}
 
-
-module.exports = mew
+module.exports = new_form
