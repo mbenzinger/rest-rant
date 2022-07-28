@@ -3,3 +3,7 @@ h1 {
     color: cornflowerblue;
   }
   
+#hero {
+  align-content: center;
+ width: 550px;
+}
