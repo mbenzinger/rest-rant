@@ -18,15 +18,11 @@ router.get('/:id', (req, res) => {
     res.render('error404')
   }
   else {
-    res.render('places/show', { place: places[id] })
+    res.render('places/show', { place: places[id], id })
   }
 })
 
 
-
-
-// More code ...
-//I don't know where this code is supposed to go, instructions say to "add to POST / Places route.""
 router.post('/', (req, res) => {
     console.log(req.body)
     if (!req.body.pic) {
