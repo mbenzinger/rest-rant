@@ -1,19 +1,14 @@
 const React = require('react')
 const Def = require('../default')
 
-function show (html) {
+function show () {
     return (
-        <html>
-            <head>
-                <title>Title</title>
-            </head>
-            <body>
-                {html.children}
-            </body>
-        </html>
+        <Def>
+          <main>
+            <h1>Show Page</h1>
+          </main>
+        </Def>
     )
-  }
-  
-
+}
 
 module.exports = show
