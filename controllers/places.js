@@ -2,11 +2,11 @@
 //const router = require('express').Router()
 //const places = require('../models/places.js')
 */
-//8.1 has been largly overwritten in sebsequent steps
-//8.2
+//8.3.1 has been largly overwritten in sebsequent steps
+//8.3.2
 const router = require('express').Router()
 const db = require('../models')
-//8.3-5
+//8.3.3-5
 router.get('/', (req, res) => {
     db.Place.find()
     .then((places) => {
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
       res.render('error404')
     })
 })
-//8.6-7
+//8.3.6-7
 router.post('/', (req, res) => {
   db.Place.create(req.body)
   .then(() => {
@@ -33,9 +33,16 @@ router.post('/', (req, res) => {
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
-
+//8.4.1-2
 router.get('/:id', (req, res) => {
-  res.send('GET /places/:id stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/show', { place })
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
 
 router.put('/:id', (req, res) => {
