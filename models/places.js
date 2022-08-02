@@ -9,7 +9,7 @@ const placeSchema = new mongoose.Schema({
   founded: Number
 })
 
-modile.exports = mongoose.model('Place', placeSchema)
+module.exports = mongoose.model('Place', placeSchema)
 
 
 //pre-mongoDB coding
