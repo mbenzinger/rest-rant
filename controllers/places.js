@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
     })
 })
 //8.3.6-7
+//9.3.5
 router.post('/', (req, res) => {
   db.Place.create(req.body)
   .then(() => {
