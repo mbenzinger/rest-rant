@@ -37,7 +37,9 @@ router.get('/new', (req, res) => {
 //8.4.1-2
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
+  .populate.apply('comments')
   .then(place => {
+    console.log(place.comments)
       res.render('places/show', { place })
   })
   .catch(err => {
