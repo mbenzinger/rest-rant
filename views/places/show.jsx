@@ -7,6 +7,11 @@ function show (data) {
       No Comments Yet!
     </h3>
   )
+  let rating = (
+    <h3 className='inactive'>
+      Not yes rated
+    </h3>
+  )
   if (data.place.comments.length) {
     comments = data.place.comments.map(c => {
       return (
