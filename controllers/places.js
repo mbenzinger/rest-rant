@@ -1,8 +1,4 @@
-/* //pre-mongoDB code here
-//const router = require('express').Router()
-//const places = require('../models/places.js')
-*/
-//8.3.1 has been largly overwritten in sebsequent steps
+
 //8.3.2
 const router = require('express').Router()
 const db = require('../models')
@@ -47,23 +43,46 @@ router.get('/:id', (req, res) => {
       res.render('error404')
   })
 })
-
+//11.3.8-9
 router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
+  .then(() => {
+      res.redirect(`/places/${req.params.id}`)
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
 
+//part 11.3.2
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+  db.Place.findByIdAndDelete(req.params.id)
+  .then(place => {
+      res.redirect('/places')
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
-
+//part 11.3.5-6
 router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
 })
 
+/*
 router.post('/:id/rant', (req, res) => {
   console.log(req.body)
   res.send('GET /places/:id/rant stub')
 })
+*/
 //unsure if this code is supposed to replace the 'rant' code above
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
