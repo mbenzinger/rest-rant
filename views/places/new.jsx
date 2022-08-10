@@ -38,4 +38,17 @@ function new_form () {
     )
 }
 
+/*  part 11.4 says thsi code goes in this file, but I don't seem to have it anywhere, nor do I know where it goes
+let sumRatings = data.place.comments.reduce((tot, c) => {
+  return tot + c.stars
+}, 0)
+let averageRating = sumRatings / data.place.comments.length
+rating = (
+  <h3>
+  {Math.round(averageRating)} stars
+  </h3>
+)
+
+*/
+
 module.exports = new_form
